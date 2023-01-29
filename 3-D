@@ -1,0 +1,28 @@
+pip install "jupyterlab>=3" "ipywidgets>=7.6" ( for anaconda users )
+import numpy as np
+from mpl_toolkits.mplot3d import axes3d
+import matplotlib.pyplot as plt
+
+
+
+import plotly.graph_objects as go
+ # this is the information ( coordinates etc.) of your model (dayk, spherese , cube etc)
+
+figure = go.Figure(data=[
+    go.Mesh3d(
+        x=[0,0,0,0,75,75,75,75],
+        y=[47.226624,-87.797147,87.163233,-42.155309,107.945874,-118.060512,153.655031,-82.508945],
+        z=[96.598101,94.620253,-42.246835,-45.015823,113.553026,110.383802,-65.508155,-68.67738],
+        
+        # it is the identifications of per verices of your model.
+        # Which vertices you want to crete triangle , you have to prefer them.
+        
+        i=[0,1,4,5,5,0,7,7,5,0,5,0],
+        j=[1,2,5,6,4,4,6,3,3,6,3,6],
+        k=[2,3,6,7,1,1,2,2,7,4,1,2],
+        name='y',
+        showscale=True
+    )
+])
+
+figure.show()
